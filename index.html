@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abilmansur | Web Studio</title>
+    <meta name="description" content="Abilmansur Web Studio — создание сайтов премиум-класса под ключ для бизнеса, компаний и франшиз. Работаем по всему миру.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: [
+                            "Inter",
+                            "ui-sans-serif",
+                            "system-ui",
+                            "-apple-system",
+                            "BlinkMacSystemFont",
+                            "Segoe UI",
+                            "sans-serif"
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: #fff;
+            font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: #fff;
+            color: #000;
+        }
+
+        .glass {
+            background: rgba(5, 5, 5, .78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .border-soft {
+            border-color: rgba(255, 255, 255, .09);
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                120deg,
+                #fff 0%,
+                #fff 45%,
+                #737373 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .service-card,
+        .review-card {
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease;
+        }
+
+        .service-card:hover,
+        .review-card:hover {
+            transform: translateY(-4px);
+            background: #0e0e0e;
+            border-color: rgba(255, 255, 255, .2);
+        }
+
+        .button {
+            transition: all .25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .input {
+            transition: border-color .2s ease, background .2s ease;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: rgba(255,255,255,.35);
+            background: #101010;
+        }
+
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s ease, visibility .25s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            transform: translateY(15px) scale(.98);
+            transition: transform .3s ease;
+        }
+
+        .modal.active .modal-box {
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="fixed top-0 left-0 right-0 z-50 glass border-b border-soft">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="h-20 flex items-center justify-between">
+
+            <a href="#top"
+               class="text-sm sm:text-base font-medium tracking-tight">
+
+                Abilmansur
+                <span class="text-neutral-600">|</span>
+                <span class="text-neutral-400">Web Studio</span>
+
+            </a>
+
+            <a href="#contacts"
+               class="hidden sm:inline-flex items-center
+                      rounded-full bg-white text-black
+                      px-5 py-2.5 text-sm font-medium button">
+
+                Связаться
+
+            </a>
+
+            <button
+                id="menuButton"
+                class="sm:hidden text-white"
+                aria-label="Открыть меню">
+
+                <svg width="24" height="24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.5">
+
+                    <path d="M4 7h16M4 12h16M4 17h16"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+        <div id="mobileMenu" class="hidden sm:hidden pb-5">
+
+            <nav class="flex flex-col gap-5 text-sm text-neutral-400">
+
+                <a href="#about" class="mobile-link hover:text-white transition">
+                    О студии
+                </a>
+
+                <a href="#services" class="mobile-link hover:text-white transition">
+                    Услуги
+                </a>
+
+                <a href="#reviews" class="mobile-link hover:text-white transition">
+                    Отзывы
+                </a>
+
+                <a href="#contacts" class="mobile-link text-white">
+                    Связаться
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main id="top">
+
+<section class="min-h-screen flex items-center pt-28 pb-20">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 w-full">
+
+        <div class="max-w-5xl">
+
+            <div class="flex items-center gap-3 mb-8">
+
+                <span class="w-2 h-2 bg-white rounded-full"></span>
+
+                <span class="text-xs uppercase tracking-[.22em] text-neutral-500">
+                    Web Development Studio
+                </span>
+
+            </div>
+
+            <h1 class="gradient-text
+                       text-5xl sm:text-6xl lg:text-8xl
+                       font-semibold
+                       tracking-[-.055em]
+                       leading-[.94]">
+
+                Создание сайтов
+                <br>
+                премиум-класса
+                <br>
+                для вашего бизнеса
+
+            </h1>
+
+            <p class="mt-8 max-w-2xl
+                      text-base sm:text-lg
+                      leading-7 text-neutral-400">
+
+                Разрабатываем современные сайты и платформы.
+                Работаем по всему миру.
+
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-3">
+
+                <a href="#contacts"
+                   class="inline-flex items-center justify-center
+                          rounded-full bg-white text-black
+                          px-7 py-4 text-sm font-medium button">
+
+                    Записаться на консультацию
+
+                    <svg class="ml-3"
+                         width="16"
+                         height="16"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5">
+
+                        <path d="M5 11l6-6M6 5h5v5"/>
+
+                    </svg>
+
+                </a>
+
+                <a href="#services"
+                   class="inline-flex items-center justify-center
+                          rounded-full border border-soft
+                          px-7 py-4 text-sm text-neutral-300
+                          hover:bg-white/5 transition">
+
+                    Смотреть услуги
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Geography -->
+
+        <div class="mt-24 pt-8 border-t border-soft
+                    grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div>
+
+                <p class="text-[11px] uppercase tracking-[.2em] text-neutral-600">
+                    География
+                </p>
+
+                <p class="mt-3 text-sm text-neutral-300">
+                    Kazakhstan · CIS · Worldwide
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="text-[11px] uppercase tracking-[.2em] text-neutral-600">
+                    Качество
+                </p>
+
+                <p class="mt-3 text-sm text-neutral-300">
+                    Контроль каждого этапа
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="text-[11px] uppercase tracking-[.2em] text-neutral-600">
+                    Сроки
+                </p>
+
+                <p class="mt-3 text-sm text-neutral-300">
+                    Соблюдение согласованных сроков
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT / WORLDWIDE
+========================================================= -->
+
+<section id="about" class="py-28 border-t border-soft">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+
+            <div>
+
+                <p class="text-xs uppercase tracking-[.2em] text-neutral-600">
+                    01 / О студии
+                </p>
+
+                <h2 class="mt-6
+                           text-4xl sm:text-5xl
+                           font-medium
+                           tracking-[-.045em]
+                           leading-tight">
+
+                    Один сайт.
+                    <br>
+                    Один подход.
+                    <br>
+                    Один результат.
+
+                </h2>
+
+            </div>
+
+            <div class="max-w-xl">
+
+                <p class="text-lg text-neutral-300 leading-8">
+
+                    Создаём цифровые решения для бизнеса,
+                    предпринимателей, компаний и франшиз.
+
+                </p>
+
+                <p class="mt-6 text-base
+                          text-neutral-500
+                          leading-7">
+
+                    Работаем с проектами по всему миру.
+                    Каждый сайт создаётся индивидуально:
+                    от структуры и визуальной концепции
+                    до разработки, адаптации и запуска.
+
+                </p>
+
+                <div class="mt-10 grid grid-cols-2 gap-8">
+
+                    <div>
+
+                        <p class="text-3xl font-medium">
+                            Worldwide
+                        </p>
+
+                        <p class="mt-2 text-xs text-neutral-600">
+                            Работа с клиентами по всему миру
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-3xl font-medium">
+                            01
+                        </p>
+
+                        <p class="mt-2 text-xs text-neutral-600">
+                            Ответственный разработчик
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services" class="py-28 border-t border-soft">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="flex flex-col md:flex-row
+                    md:items-end md:justify-between gap-8">
+
+            <div>
+
+                <p class="text-xs uppercase tracking-[.2em] text-neutral-600">
+                    02 / Услуги
+                </p>
+
+                <h2 class="mt-5
+                           text-4xl sm:text-5xl
+                           font-medium tracking-[-.045em]">
+
+                    Что мы создаём
+
+                </h2>
+
+            </div>
+
+            <p class="max-w-md
+                      text-sm leading-6
+                      text-neutral-500">
+
+                Стоимость зависит от задачи,
+                объёма работ и реализации проекта.
+                Финальная цена рассчитывается после обсуждения.
+
+            </p>
+
+        </div>
+
+
+        <div class="mt-14 grid md:grid-cols-2 gap-4">
+
+
+            <!-- 01 -->
+
+            <article class="service-card
+                            border border-soft
+                            rounded-2xl p-7 sm:p-9">
+
+                <div class="flex justify-between">
+
+                    <span class="text-xs text-neutral-600">
+                        01
+                    </span>
+
+                    <span class="text-neutral-700">
+                        ↗
+                    </span>
+
+                </div>
+
+                <div class="mt-16">
+
+                    <h3 class="text-2xl font-medium">
+                        Лендинг
+                    </h3>
+
+                    <p class="mt-3
+                              text-sm text-neutral-500
+                              leading-6">
+
+                        Одностраничный сайт под ключ
+                        для продукта, услуги, компании
+                        или рекламной кампании.
+
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-[11px] uppercase
+                              tracking-widest text-neutral-600">
+
+                        Цена
+
+                    </p>
+
+                    <p class="mt-2 text-sm text-neutral-300">
+                        От запроса
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article class="service-card
+                            border border-soft
+                            rounded-2xl p-7 sm:p-9">
+
+                <div class="flex justify-between">
+
+                    <span class="text-xs text-neutral-600">
+                        02
+                    </span>
+
+                    <span class="text-neutral-700">
+                        ↗
+                    </span>
+
+                </div>
+
+                <div class="mt-16">
+
+                    <h3 class="text-2xl font-medium">
+                        Корпоративный сайт
+                    </h3>
+
+                    <p class="mt-3
+                              text-sm text-neutral-500
+                              leading-6">
+
+                        Представительский сайт компании,
+                        бренда или франшизы с индивидуальной
+                        структурой и дизайном.
+
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-[11px] uppercase
+                              tracking-widest text-neutral-600">
+
+                        Цена
+
+                    </p>
+
+                    <p class="mt-2 text-sm text-neutral-300">
+                        Расчёт индивидуально
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article class="service-card
+                            border border-soft
+                            rounded-2xl p-7 sm:p-9">
+
+                <div class="flex justify-between">
+
+                    <span class="text-xs text-neutral-600">
+                        03
+                    </span>
+
+                    <span class="text-neutral-700">
+                        ↗
+                    </span>
+
+                </div>
+
+                <div class="mt-16">
+
+                    <h3 class="text-2xl font-medium">
+                        Интернет-магазин / Платформа
+                    </h3>
+
+                    <p class="mt-3
+                              text-sm text-neutral-500
+                              leading-6">
+
+                        Онлайн-магазины, каталоги,
+                        сервисы и функциональные
+                        веб-платформы.
+
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-[11px] uppercase
+                              tracking-widest text-neutral-600">
+
+                        Цена
+
+                    </p>
+
+                    <p class="mt-2 text-sm text-neutral-300">
+                        По итогам реализации проекта
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article class="service-card
+                            border border-soft
+                            rounded-2xl p-7 sm:p-9">
+
+                <div class="flex justify-between">
+
+                    <span class="text-xs text-neutral-600">
+                        04
+                    </span>
+
+                    <span class="text-neutral-700">
+                        ↗
+                    </span>
+
+                </div>
+
+                <div class="mt-16">
+
+                    <h3 class="text-2xl font-medium">
+                        Индивидуальная веб-разработка
+                    </h3>
+
+                    <p class="mt-3
+                              text-sm text-neutral-500
+                              leading-6">
+
+                        Уникальные веб-решения
+                        под конкретную задачу,
+                        бизнес-процесс или продукт.
+
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-[11px] uppercase
+                              tracking-widest text-neutral-600">
+
+                        Цена
+
+                    </p>
+
+                    <p class="mt-2 text-sm text-neutral-300">
+                        Зависит от сложности
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DEVELOPER
+========================================================= -->
+
+<section class="py-28 border-t border-soft">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-[.8fr_1.2fr]
+                    gap-14 lg:gap-24">
+
+            <div>
+
+                <p class="text-xs uppercase tracking-[.2em] text-neutral-600">
+                    03 / Разработчик
+                </p>
+
+                <h2 class="mt-6
+                           text-4xl sm:text-6xl
+                           font-medium tracking-[-.05em]">
+
+                    Әбілмансұр
+
+                </h2>
+
+                <p class="mt-4 text-neutral-500">
+                    Веб-разработчик и основатель
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="border border-soft
+                            rounded-2xl p-7 sm:p-10">
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="w-2 h-2
+                                     rounded-full bg-white">
+                        </span>
+
+                        <span class="text-xs uppercase
+                                     tracking-[.16em]
+                                     text-neutral-500">
+
+                            Personal development
+
+                        </span>
+
+                    </div>
+
+                    <p class="mt-8
+                              text-xl sm:text-2xl
+                              leading-9 text-neutral-200">
+
+                        Запись и разработка ведутся
+                        исключительно к Әбілмансұр.
+
+                    </p>
+
+                    <p class="mt-8 pt-6
+                              border-t border-soft
+                              text-sm text-neutral-500
+                              leading-7">
+
+                        Один специалист сопровождает проект
+                        от первой консультации до финального запуска.
+                        Это позволяет сохранять единый стиль,
+                        коммуникацию и контроль качества.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
+<section id="reviews" class="py-28 border-t border-soft">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <p class="text-xs uppercase tracking-[.2em] text-neutral-600">
+            04 / Отзывы
+        </p>
+
+        <h2 class="mt-5
+                   text-4xl sm:text-5xl
+                   font-medium tracking-[-.045em]">
+
+            Отзывы клиентов
+
+        </h2>
+
+
+        <div class="mt-14 grid md:grid-cols-3 gap-4">
+
+
+            <!-- Review 1 -->
+
+            <article class="review-card
+                            border border-soft
+                            rounded-2xl p-7">
+
+                <span class="text-3xl text-neutral-700">
+                    “
+                </span>
+
+                <p class="mt-5
+                          text-sm text-neutral-300
+                          leading-7">
+
+                    Нам был нужен сайт, который выглядел бы
+                    на уровне самого бизнеса. Получили именно
+                    такой результат — лаконично и профессионально.
+
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-sm font-medium">
+                        Арман С.
+                    </p>
+
+                    <p class="mt-1 text-xs text-neutral-600">
+                        Ресторанный бизнес
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- Review 2 -->
+
+            <article class="review-card
+                            border border-soft
+                            rounded-2xl p-7">
+
+                <span class="text-3xl text-neutral-700">
+                    “
+                </span>
+
+                <p class="mt-5
+                          text-sm text-neutral-300
+                          leading-7">
+
+                    Главной задачей была презентация франшизы.
+                    Сайт получился современным, понятным
+                    и удобным для потенциальных партнёров.
+
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-sm font-medium">
+                        Данияр К.
+                    </p>
+
+                    <p class="mt-1 text-xs text-neutral-600">
+                        Франчайзинг
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- Review 3 -->
+
+            <article class="review-card
+                            border border-soft
+                            rounded-2xl p-7">
+
+                <span class="text-3xl text-neutral-700">
+                    “
+                </span>
+
+                <p class="mt-5
+                          text-sm text-neutral-300
+                          leading-7">
+
+                    Понравилось, что сначала разобрали задачу,
+                    а уже потом перешли к разработке.
+                    Получили сайт без лишних элементов.
+
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-soft">
+
+                    <p class="text-sm font-medium">
+                        Алина М.
+                    </p>
+
+                    <p class="mt-1 text-xs text-neutral-600">
+                        Beauty-сфера
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACTS
+========================================================= -->
+
+<section id="contacts" class="py-28 border-t border-soft">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+                <p class="text-xs uppercase tracking-[.2em] text-neutral-600">
+                    05 / Контакты
+                </p>
+
+                <h2 class="mt-6
+                           text-4xl sm:text-6xl
+                           font-medium
+                           tracking-[-.05em]
+                           leading-tight">
+
+                    Есть проект?
+                    <br>
+                    Давайте обсудим.
+
+                </h2>
+
+                <p class="mt-7 max-w-md
+                          text-base text-neutral-500
+                          leading-7">
+
+                    Расскажите о своей задаче.
+                    Мы изучим запрос и свяжемся
+                    с вами для обсуждения проекта.
+
+                </p>
+
+
+                <div class="mt-12">
+
+                    <p class="text-[11px]
+                              uppercase
+                              tracking-[.2em]
+                              text-neutral-600">
+
+                        Прямая связь
+
+                    </p>
+
+
+                    <a href="tel:+77770584344"
+                       class="block mt-4
+                              text-xl sm:text-2xl
+                              font-medium
+                              hover:text-neutral-400
+                              transition">
+
+                        8 (777) 058-43-44
+
+                    </a>
+
+
+                    <div class="mt-5 flex flex-wrap gap-3">
+
+                        <a href="tel:+77770584344"
+                           class="rounded-full
+                                  border border-soft
+                                  px-5 py-3
+                                  text-sm
+                                  hover:bg-white/5
+                                  transition">
+
+                            Позвонить
+
+                        </a>
+
+                        <a href="https://wa.me/77770584344"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="rounded-full
+                                  border border-soft
+                                  px-5 py-3
+                                  text-sm
+                                  hover:bg-white/5
+                                  transition">
+
+                            WhatsApp
+
+                        </a>
+
+                        <!--
+                            В Telegram ссылка по номеру может
+                            не работать у всех пользователей.
+                            Поэтому здесь используется переход
+                            на поиск контакта по номеру.
+                        -->
+
+                        <a href="https://t.me/+77770584344"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="rounded-full
+                                  border border-soft
+                                  px-5 py-3
+                                  text-sm
+                                  hover:bg-white/5
+                                  transition">
+
+                            Telegram
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT / FORM -->
+
+            <div>
+
+                <div class="rounded-2xl
+                            border border-soft
+                            p-6 sm:p-8">
+
+                    <div class="mb-8">
+
+                        <p class="text-lg font-medium">
+                            Записаться на консультацию
+                        </p>
+
+                        <p class="mt-2
+                                  text-sm text-neutral-600">
+
+                            Заполните форму — мы свяжемся
+                            с вами после получения заявки.
+
+                        </p>
+
+                    </div>
+
+
+                    <!--
+                    =====================================================
+                    FORMSPREE
+
+                    ВАЖНО:
+
+                    Formspree не позволяет просто указать
+                    чужой Gmail в HTML и отправлять туда письма.
+
+                    Чтобы форма реально отправляла заявки
+                    на rrabotavsegdaa@gmail.com:
+
+                    1. Откройте https://formspree.io/
+                    2. Создайте бесплатную форму.
+                    3. Укажите:
+                       rrabotavsegdaa@gmail.com
+                       как email получателя.
+                    4. Formspree выдаст URL вида:
+
+                       https://formspree.io/f/abcdwxyz
+
+                    5. Замените ниже:
+                       YOUR_FORMSPREE_ID
+
+                    Например:
+                       action="https://formspree.io/f/abcdwxyz"
+
+                    После этого форма будет работать.
+                    =====================================================
+                    -->
+
+
+                    <form
+                        id="contactForm"
+                        action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                        method="POST"
+                        class="space-y-5">
+
+
+                        <!-- NAME -->
+
+                        <div>
+
+                            <label for="name"
+                                   class="block mb-2
+                                          text-xs text-neutral-500">
+
+                                Ваше имя
+
+                            </label>
+
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                autocomplete="name"
+                                required
+                                placeholder="Как к вам обращаться?"
+                                class="input w-full
+                                       rounded-xl
+                                       border border-soft
+                                       bg-[#0a0a0a]
+                                       px-4 py-4
+                                       text-sm text-white
+                                       placeholder:text-neutral-700">
+
+                        </div>
+
+
+                        <!-- CONTACT -->
+
+                        <div>
+
+                            <label for="contact"
+                                   class="block mb-2
+                                          text-xs text-neutral-500">
+
+                                Номер телефона / Контакт
+
+                            </label>
+
+                            <input
+                                id="contact"
+                                name="contact"
+                                type="text"
+                                autocomplete="tel"
+                                required
+                                placeholder="+7 (___) ___-__-__"
+                                class="input w-full
+                                       rounded-xl
+                                       border border-soft
+                                       bg-[#0a0a0a]
+                                       px-4 py-4
+                                       text-sm text-white
+                                       placeholder:text-neutral-700">
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div>
+
+                            <label for="message"
+                                   class="block mb-2
+                                          text-xs text-neutral-500">
+
+                                Описание задачи / проекта
+
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                required
+                                placeholder="Расскажите о вашем проекте..."
+                                class="input w-full
+                                       rounded-xl
+                                       border border-soft
+                                       bg-[#0a0a0a]
+                                       px-4 py-4
+                                       text-sm text-white
+                                       placeholder:text-neutral-700"></textarea>
+
+                        </div>
+
+
+                        <!-- EMAIL SUBJECT -->
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Новая заявка — Abilmansur Web Studio">
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            id="submitButton"
+                            type="submit"
+                            class="w-full
+                                   rounded-xl
+                                   bg-white
+                                   text-black
+                                   px-6 py-4
+                                   text-sm font-medium
+                                   button">
+
+                            Отправить заявку
+
+                        </button>
+
+
+                        <p class="text-[11px]
+                                  text-center
+                                  leading-5
+                                  text-neutral-700">
+
+                            Ответим после получения заявки.
+
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="border-t border-soft">
+
+    <div class="max-w-7xl mx-auto
+                px-5 sm:px-8 lg:px-10">
+
+        <div class="py-8
+                    flex flex-col sm:flex-row
+                    justify-between gap-4">
+
+            <p class="text-xs text-neutral-600">
+                © 2026 Abilmansur | Web Studio
+            </p>
+
+            <p class="text-xs text-neutral-700">
+                Web Development · Worldwide
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SUCCESS MODAL
+========================================================= -->
+
+<div id="successModal"
+     class="modal fixed inset-0 z-[100]
+            flex items-center justify-center
+            bg-black/80 px-5">
+
+    <div class="modal-box
+                w-full max-w-md
+                rounded-2xl
+                border border-white/10
+                bg-[#101010]
+                p-7 sm:p-9">
+
+        <div class="flex items-center justify-center
+                    w-12 h-12 rounded-full
+                    border border-white/15">
+
+            <svg width="20"
+                 height="20"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5">
+
+                <path d="M5 10l3 3 7-7"/>
+
+            </svg>
+
+        </div>
+
+        <h3 class="mt-7
+                   text-2xl
+                   font-medium">
+
+            Заявка отправлена
+
+        </h3>
+
+        <p class="mt-4
+                  text-sm
+                  leading-6
+                  text-neutral-500">
+
+            Спасибо! Ваша заявка успешно отправлена
+            Әбілмансұр, мы скоро свяжемся с вами.
+
+        </p>
+
+        <button
+            id="closeModal"
+            class="mt-8 w-full
+                   rounded-xl
+                   bg-white
+                   text-black
+                   py-3.5
+                   text-sm
+                   font-medium
+                   button">
+
+            Закрыть
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* ============================
+       MOBILE MENU
+    ============================ */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const mobileLinks =
+        document.querySelectorAll(".mobile-link");
+
+    menuButton.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("hidden");
+
+    });
+
+    mobileLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.add("hidden");
+
+        });
+
+    });
+
+
+    /* ============================
+       FORM
+    ============================ */
+
+    const form =
+        document.getElementById("contactForm");
+
+    const submitButton =
+        document.getElementById("submitButton");
+
+    const successModal =
+        document.getElementById("successModal");
+
+    const closeModalButton =
+        document.getElementById("closeModal");
+
+
+    form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const originalText =
+            submitButton.textContent;
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            "Отправляем...";
+
+
+        try {
+
+            const response = await fetch(
+                form.action,
+                {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+
+
+            if (response.ok) {
+
+                form.reset();
+
+                successModal.classList.add("active");
+
+            } else {
+
+                alert(
+                    "Не удалось отправить заявку. Проверьте настройки Formspree или свяжитесь с нами напрямую."
+                );
+
+            }
+
+        } catch (error) {
+
+            alert(
+                "Ошибка соединения. Попробуйте ещё раз или напишите нам в WhatsApp."
+            );
+
+        } finally {
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                originalText;
+
+        }
+
+    });
+
+
+    /* ============================
+       CLOSE MODAL
+    ============================ */
+
+    function closeModal() {
+
+        successModal.classList.remove("active");
+
+    }
+
+
+    closeModalButton.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    successModal.addEventListener(
+        "click",
+        (event) => {
+
+            if (event.target === successModal) {
+                closeModal();
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (event.key === "Escape") {
+                closeModal();
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
